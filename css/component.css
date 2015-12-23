@@ -1,0 +1,169 @@
+@font-face{
+    font-family: 'bariol-regular';
+    src: url('../fonts/bariol_regular-webfont.eot?') format('eot');
+    src: url('../fonts/bariol_regular-webfont.woff') format('woff'),
+         url('../FONT/bariol_regular-webfont.tff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: 'bariol-regular', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+}
+a{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    line-height:40px;
+    width: 160px;
+    margin-left: 20px;
+    font-size: 1.4rem;
+}
+section{
+    display: block;
+    text-align: center;
+    margin:0 auto;
+    padding: 12em 3em;
+}
+.color-1{
+    background: #435a6b;
+}
+.color-2{
+    background: #0e83cd;
+}
+.color-3{
+    background: #f19f0f;
+}
+.color-4{
+    background: #cd4436;
+}
+.color-5{
+    background: #0e83cd;
+}
+/*nav1*/
+.nav-1 a::before{
+    content: '[';
+    opacity: 0;
+    margin-right: 10px;
+
+    -webkit-transform: translateX(-10px);
+    transition: -webkit-transform 0.3s,opacity 0.2s;
+}
+.nav-1 a::after{
+    content: ']';
+    opacity: 0;
+    margin-left: 10px;
+
+    -webkit-transform: translateX(10px);
+    transition: -webkit-transform 0.3s,opacity 0.2s;
+}
+.nav-1 a:hover::before,
+.nav-1 a:hover::after,
+.nav-1 a:focus::before,
+.nav-1 a:focus::after{
+    opacity: 1;
+    -webkit-transform: translateX(0);
+}
+
+/*nav2*/
+.nav-2 a{
+    -webkit-perspective:1000px;
+}
+.nav-2 a span{
+    display: inline-block;
+    padding: 0 14px;
+    background: #2195de;
+
+    -webkit-transform-origin:50% 0;
+    -webkit-transform-style:preserve-3d;
+    transition:-webkit-transform 0.4s;
+}
+.nav-2 a span::before{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #0965a0;
+    content: attr(data-hover);
+    
+    transition: background 0.3s;
+    -webkit-transform:rotateX(-90deg);
+    -webkit-transform-origin:50% 0;
+}
+.nav-2 a:hover span,
+.nav-2 a:focus span
+{
+    -webkit-transform:rotateX(90deg) translateY(-22px);
+}
+
+/*nav3*/
+.nav-3 a::after{
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: rgba(0,0,0,0.1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    transition: -webkit-transform 0.3s, opacity 0.3s;
+    -webkit-transform:translateY(10px);
+}
+.nav-3 a:hover::after,
+.nav-3 a:focus::after{
+    opacity: 1;
+    -webkit-transform:translateY(0px);
+}
+
+/*nav4*/
+.nav-4 a{ 
+    overflow: hidden;
+    line-height: 25px;
+}
+.nav-4 a span{
+    position: relative;
+    display: inline-block;
+    transition: -webkit-transform 0.3s;
+}
+.nav-4 a span::before{
+    position: absolute;
+    top: 100%;
+    content: attr(data-hover);
+    font-weight: bold;
+    
+}
+.nav-4 a:hover span,
+.nav-4 a:focus span{
+    -webkit-transform: translateY(-100%); 
+}
+
+/*nav5*/
+.nav-5 a::before, 
+.nav-5 a::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    height: 2px;
+}
+.nav-5 a::before{
+    width: 100%;
+    transition:top 0.3s;
+}
+.nav-5 a::after{
+    width: 2px;
+    transition: height 0.3s;
+}
+
+.nav-5 a:hover::before{
+    top: 100%;
+}
+.nav-5 a:hover::after{
+    height: 100%;
+}
