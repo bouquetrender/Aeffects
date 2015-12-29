@@ -19,7 +19,6 @@ a{
     text-decoration: none;
     color: white;
     line-height:40px;
-    width: 160px;
     margin-left: 20px;
     font-size: 1.4rem;
 }
@@ -43,6 +42,18 @@ section{
 }
 .color-5{
     background: #0e83cd;
+}
+.color-6 {
+    background: #ecf0f1;
+}
+.color-7{
+    background: #435a6b;
+}
+.color-8{
+    background: #16a085;
+}
+.nav-1 a,.nav-2 a,.nav-3 a,.nav-4 a,.nav-5 a,.nav-6 a,.nav-7 a,.nav-8 a,.nav-9 a{
+    width: 160px;
 }
 /*nav1*/
 .nav-1 a::before{
@@ -166,4 +177,173 @@ section{
 }
 .nav-5 a:hover::after{
     height: 100%;
+}
+
+/*nav6*/
+.nav-6 a{
+    color:#566473;
+    font-weight:bold;
+}
+.nav-6 a::after,
+.nav-6 a::before{
+    content:'';
+    width:100%;
+    height:3px;
+    background: #566473;
+    position:absolute;
+    top:100%;
+    left:0px;
+
+    transition: -webkit-transform 0.3s;
+    -webkit-transform: scale(0.85);
+}
+.nav-6 a::after{
+    opacity:0;
+    transition: opacity 0.3s, -webkit-transform 0.3s, top 0.3s;
+}
+.nav-6 a:hover::after,
+.nav-6 a:hover::before,
+.nav-6 a:focus::after,
+.nav-6 a:focus::before{
+    -webkit-transform: scale(1);
+}
+.nav-6 a:hover::after{
+    opacity:1;
+    top: 0;
+}
+
+/*nav7*/
+.nav-7 a::before,
+.nav-7 a::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width:100%;
+    height: 100%;
+    border: 3px solid #354856;
+}
+
+.nav-7 a::after{
+    border-color:#fff;
+    opacity:0;
+    -webkit-transform: translateY(-7px) translateX(6px);
+    transition: -webkit-transform .3s, opacity .3s;
+}
+
+.nav-7 a:hover::after{
+    -webkit-transform: translateY(0px) translateX(0px);
+    opacity:1;
+}
+
+/*nav8*/
+.nav-8 a::before,
+.nav-8 a::after{
+    content : '';
+    position:absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height: 1px;
+    background: #fff;
+    opacity:.2;
+    transition: -webkit-transform .3s, opacity .3s, height .3s;   
+}
+.nav-8 a::before{
+    -webkit-transform: translateY(-10px);
+}
+.nav-8 a::after{
+    opacity:0;
+    top:100%;
+    -webkit-transform: translateY(-5px);
+}
+
+.nav-8 a span:first-child{
+    display: block;
+    margin-bottom: -5px;
+}
+.nav-8 a span:last-child{
+    display: inline-block;
+    font-size:1rem;
+    line-height:35px;
+    opacity:0;
+    -webkit-transform: translateY(-30%);
+    transition: opacity .3s, -webkit-transform .3s;
+}
+
+.nav-8 a:hover::before,
+.nav-8 a:focus::before{
+    opacity:1;
+    height: 4px;
+}
+.nav-8 a:hover::after,
+.nav-8 a:focus::after
+{
+    opacity:1;
+    -webkit-transform: translateY(0);
+}
+.nav-8 a:hover span:last-child{
+    opacity:1;
+    -webkit-transform: translateY(0);
+}
+
+/*nav9*/
+.nav-9{
+    z-index:1;
+    position:relative;
+}
+.nav-9 a{
+    overflow:hidden;
+}
+.nav-9 a span{
+    display:block;
+    width:100%;
+    height: 100%;
+    background: #0f7c67;
+    transition: -webkit-transform .3s;
+}
+.nav-9 a::before{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    content:attr(data-hover);
+    color:#0f7c67;
+    background: #fff;
+    z-index:-1;
+    transition: -webkit-transform .3s;
+    -webkit-transform: translateX(-25%);
+}
+.nav-9 a:hover span,
+.nav-9 a:focus span{
+    -webkit-transform: translateX(100%);
+}
+.nav-9 a:hover::before,
+.nav-9 a:focus::before{
+    -webkit-transform: translateX(0%);
+}
+
+/*nav10*/
+.nav-10 a{
+    height:inherit;
+    color: #0972b4;
+    border-top:2px solid #0972b4;
+}
+.nav-10 a:not(:first-child){
+    margin-left:85px;
+}
+.nav-10 a::before{
+    content:attr(data-hover);
+    overflow:hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    max-width:0%;
+    border-bottom: 2px solid #fff;
+    transition:max-width .5s;
+    color:#fff;
+}
+.nav-10 a:hover::before{
+    max-width:100%;
 }
